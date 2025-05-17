@@ -1,0 +1,4 @@
+.env
+env/
+app/whisper.cpp/
+app/coqui_utils/
