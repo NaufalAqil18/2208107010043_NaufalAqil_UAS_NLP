@@ -30,8 +30,9 @@ voice_chatbot_project/
 ## 📚 Catatan
 - Semua file audio menggunakan format `.wav`.
 - Untuk menghasilkan fonem seperti `dəˈnɡan`, teks dari Gemini harus dikonversi ke fonetik.
-- Disarankan menggunakan model Whisper: `ggml-large-v3-turbo`.
+- Pada project menggunakan model Whisper: `ggml-base`.
 - Gunakan speaker: `wibowo` dari model Coqui v1.2.
+- pada `app\coqui_utils\config.json` terdapat sedikit modifikasi untuk `"speakers_file": "app/coqui_utils/speakers.pth"`
 
 ## 👨‍💻 Dibuat Untuk
 Proyek UAS mata kuliah *Pemrosesan Bahasa Alami* — Semester Genap 2024/2025.

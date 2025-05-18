@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import FileResponse
 import tempfile
 import os
+from g2p_id import G2P
 
 from .stt import transcribe_speech_to_text
 from .llm import generate_response
@@ -25,7 +26,9 @@ async def voice_chat(file: UploadFile = File(...)):
             raise HTTPException(status_code=400, detail="Gagal mengenali suara")
 
         # generate response LLM
+        g2p = G2P()
         response_text = generate_response(text)
+        response_text = g2p(response_text)
 
         # panggil fungsi TTS dengan teks response dan path output
         path_hasil= transcribe_text_to_speech(response_text)
